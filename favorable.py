@@ -5,6 +5,7 @@ next(inn)
 
 df = {}
 def traverse(cc, n):
+    print(n)
     # if df.get(n) is not None:
     #     return df[n]
     if cc[n][0] == "favourably":
