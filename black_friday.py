@@ -12,14 +12,15 @@ for i,v in enumerate(inn):
         cache[v] = i
     else:
         cache[v] = -1
-print(cache)
-mmax = -1
+mmax = -1 
+idx = -1
 for k,v in cache.items():
-    if v > mmax:
+    if k > mmax and v != -1:
         mmax = k 
-if mmax == -1:
+        idx = v
+if idx == -1:
     print("none")
 else:
-    print(cache[mmax] + 1)
+    print(idx + 3)
 
 

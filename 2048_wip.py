@@ -23,3 +23,6 @@ elif action == 2:
 else:
     # down
     pass
+
+if __name__ == "__main__":
+    print("hi")

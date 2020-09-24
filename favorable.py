@@ -5,7 +5,6 @@ next(inn)
 
 df = {}
 def traverse(cc, n):
-    print(n)
     # if df.get(n) is not None:
     #     return df[n]
     if cc[n][0] == "favourably":
@@ -15,10 +14,12 @@ def traverse(cc, n):
         df[n] = 0
         return 0
     else:
+        if df.get(n) != None:
+            return df[n]
         count = 0
         for i in cc[n]:
             count += traverse(cc, int(i))
-        # df[n] = count
+        df[n] = count
         return count
 
 cache = {}
@@ -31,6 +32,7 @@ for line in inn:
         c = traverse(cache, 1)
         print(c)
         cache = {}
+        df = {}
     elif len(elems) == 4:
         cache[int(elems[0])] = elems[1:]
     else:
